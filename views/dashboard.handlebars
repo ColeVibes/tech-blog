@@ -1,0 +1,47 @@
+<h2>{{username.user.username}}'s Dashboard</h2>
+
+<!-- shows all the user's posts -->
+{{#if posts.length}}
+<section>
+    <ul class="post-list">
+        {{#each posts as |post|}}
+        <li>
+            <article class="post">
+                <div class="title">
+                    <a href="/post/{{id}}" target="" id="post-title">{{title}}</a>
+                </div>
+                <div class="meta">
+                    {{post_content}}
+                    <br />
+                    <!-- display edit button -->
+                    <a href="/editpost/{{id}}">
+                        <button type="submit" id="edit-post" class="btn">Edit Post</button>
+                    </a>
+                </div>
+            </article>
+        </li>
+        {{/each}}
+    </ul>
+</section>
+{{/if}}
+
+<!-- form to create a new post -->
+<section>
+    <h2>Create new post</h2>
+
+    <form class="new-post">
+        <div>
+            <label for="post-title">Title</label>
+            <input type="text" id="post-title" name="post-title" />
+        </div>
+
+        <div>
+            <label for="post-content">Content</label>
+            <textarea id="post-content" name="post-content"></textarea>
+        </div>
+
+        <button type="submit" class="btn">Create</button>
+    </form>
+</section>
+
+<script src="../public/js/add-post.js"></script>
