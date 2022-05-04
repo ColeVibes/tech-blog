@@ -96,7 +96,7 @@ router.put('/:id', (req, res) => {
 
 // POST login // localhost:3001/api/users/login
 router.post('/login', (req, res) => {
-    // expects {username: 'LindseyM', password: 'password'}
+    
     User.findOne({
         where: {
             username: req.body.username
